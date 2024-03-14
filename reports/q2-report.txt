@@ -1,0 +1,16 @@
+Question - can see a weird thing happening for non clinial reason increasing during the 
+winter months, check using statiscial inference if month december have the
+ same number of non clinical reason cancellation. should be not, found on research paper, maybe go and also check with other reasons
+
+Answer - The first thing to be analysed is if there exists any relationship between the type of cancellation and the season, to test this we will be performing
+chi square test.
+Null hypothesis: No relationship the type of cancellation and the season in which it took place.
+This would mean that the number of cancellations per cancellation type per season should match or slightly differ from the expected values.
+For starters we take the scotland cancellations dataframe and take add a new column called seasons which would include the season in which the cancellation took place 
+, depending on the month it happened.
+We then take away the unnecessary columns.
+to then group the types of cancellation within all 4 seasons and sum all the values to then get the total number of values per injury type per season
+with all this information in hand we can construct the contingency table and perform the chi square test.
+
+After performing the chi square test in the contingency table we can observe that the p value is 4.66179921136406e-49 meaning that it's safe to reject the 
+null hypothesis, meaning that there exists a relationship between season and cancellation type
