@@ -116,60 +116,40 @@ For Cancellations in Scotland, there are 105 entries and 14 columns: Month (Mont
 \paragraph{Data processing} 
 Some cleaning was required for the three datasets. About half of the columns in each dataset were useless and needed to be dropped. These were columns that ended with a QF. In the Cancellations by Health Board dataset, one entry was missing, and there was a month when a Health Board entry had no value. We collected all the health boards for that particular month and concluded that the missing entry belonged to one of the health boards that also did not have an entry for that specific month.
 
+The data type of the Month column needed to be changed because the format of the entry was YYYYMM, which made it difficult to create graphs. To resolve this issue, the values in this column were converted to a pandas datetime object using  \text{pandas.to_datetime} function.
+
 According to the website, there appears to be a discrepancy in the data obtained from NHS Orkney, and efforts are being made to resolve the issue. The statistics are subject only to basic quality assurance by PHS. As a result, these datasets may not present a complete overview of cancellations throughout Scotland, and the data should not be trusted entirely.
 
 After conducting a comprehensive review of the datasets, we discovered that the Cancellations by Hospitals dataset contains information for only 49 hospitals, which is only half of the total NHS hospitals in Scotland \cite{hospital_scotland}. Out of these 49 hospitals, only 30 have complete data available from May 2015 until January 2024.
+
 
 
 \section{Exploration and  analysis}
 % Suggested 500 words for individual report; proportionately longer
 % for group projects).
 
+In Figure 1, we can observe the trend of operations and cancelled operations from 2015 to 2024. The graph is plotted on a logarithmic scale, which allows us to see the changes in the number of operations and cancellations with greater precision.
+
+Based on Figure 1, it is evident that Covid-19 had a significant impact on the number of operations and cancellations in Scotland. On April 30th, 2022, PCR COVID-19 testing in Scotland ended, testing sites were closed, and the legal requirement to wear face coverings in most indoor settings and public transport was lifted \cite{williams_bbc_scotland_2023}. This date marks the end of Covid-19 measures in Scotland. From Figure 1, it is evident that the number of operations and cancellations across Scotland did not return to their original levels even after Covid-19 measures ended. Before Covid-19, the average number of operations was 23213213213 with 324324324324 cancellations. In contrast, after Covid-19, the average number of operations was 3432434 with 349204 cancellations. The percentage of cancellations before Covid-19 was 21323%, whereas, after Covid-19, it was 213213%.
 
 
-A data science analysis of the paper, including: 
-\begin{itemize}
-\item Visualisations (for example
-  Figure~\ref{fds-project-template:fig:example1}) and tables (for
-  example Table~\ref{tab:example1}). Please make sure that all figures
-  and tables are referred to in the text, as demonstrated in this
-  bullet point. 
-\item Interpretation of the results 
-\item Description of how you have applied one ore more of the
-  statistical and ML methods learned in the FDS to the data
-\item Interpretation of the findings 
-\end{itemize}
-
-You can use equations like this:
-\begin{equation}
-  \label{fds-project-template:eq:1}
-  \overline{x} = \sum_{i=1}^n x_i
-\end{equation}
-or maths inline: $E=mc^2$. However, you do not need to reexplain techniques that you have learned in the course -- assume the reader understands linear regression, logistic regression K-nearest neighbours etc.  Remember to explain any symbols use, e.g.~``$n$ is the number of data points and $x_i$ is the value of the $i$th data point.''.
 
 \section{Discussion and conclusions}
 % Suggested 400 words.
 
 \paragraph{Summary of findings}
 
+
 \paragraph{Evaluation of own work: strengths and limitations}
 
+
 \paragraph{Comparison with any other related work}
-E.g. ``Anscombe has also demonstrated that many patterns of data can
-have the same correlation coefficient'' \cite{anscombe1973graphs}.
 
-Wikipedia can also be cited but it is better if you find the original
-reference it for a particular claim in the list of references on the
-Wikipedia page, read it, and cite it.
-
-The golden rule is always to cite information that has come from other
-sources, to avoid plagiarism \cite{wiki:plagarism}.
 
 \paragraph{Improvements and extensions}
+
 
 
 \printbibliography
 \end{document}
 
-% LocalWords:  lrrrrrrr ment Macduff Kemnay Ruchill FDS mc th fds
-% LocalWords:  Anscombe
